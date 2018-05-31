@@ -1,0 +1,10 @@
+man(alan).
+man(john).
+man(george).
+
+program() :-
+    open('file.txt',write, Stream),
+   (  man(X),  write(Stream,X),write(Stream,'-'),nl(Stream),fail;true
+   ),
+    close(Stream).
+cartesiano(X,Y):- man(X),man(Y),dif(X,Y).
